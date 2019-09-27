@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1448FE4-9AC7-4DF8-B6AE-D22341865FF1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bootcamp.CRUD</RootNamespace>
+    <AssemblyName>Bootcamp.CRUD</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\MyContext.cs" />
+    <Compile Include="Controller\ItemsController.cs" />
+    <Compile Include="Controller\SuppliersController.cs" />
+    <Compile Include="Controller\TransactionsController.cs" />
+    <Compile Include="Core\BaseModel.cs" />
+    <Compile Include="Migrations\201901230746163_addingModelFirst.cs" />
+    <Compile Include="Migrations\201901230746163_addingModelFirst.Designer.cs">
+      <DependentUpon>201901230746163_addingModelFirst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901231002102_addingStatusDelete.cs" />
+    <Compile Include="Migrations\201901231002102_addingStatusDelete.Designer.cs">
+      <DependentUpon>201901231002102_addingStatusDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901240112104_addingModelItem.cs" />
+    <Compile Include="Migrations\201901240112104_addingModelItem.Designer.cs">
+      <DependentUpon>201901240112104_addingModelItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901240252368_AddVirtualSupplierID.cs" />
+    <Compile Include="Migrations\201901240252368_AddVirtualSupplierID.Designer.cs">
+      <DependentUpon>201901240252368_AddVirtualSupplierID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901240414329_addingTransaction.cs" />
+    <Compile Include="Migrations\201901240414329_addingTransaction.Designer.cs">
+      <DependentUpon>201901240414329_addingTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901240626264_updateModelTransaction.cs" />
+    <Compile Include="Migrations\201901240626264_updateModelTransaction.Designer.cs">
+      <DependentUpon>201901240626264_updateModelTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\Supplier.cs" />
+    <Compile Include="Model\Transaction.cs" />
+    <Compile Include="Model\TransactionsItem.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201901230746163_addingModelFirst.resx">
+      <DependentUpon>201901230746163_addingModelFirst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901231002102_addingStatusDelete.resx">
+      <DependentUpon>201901231002102_addingStatusDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901240112104_addingModelItem.resx">
+      <DependentUpon>201901240112104_addingModelItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901240252368_AddVirtualSupplierID.resx">
+      <DependentUpon>201901240252368_AddVirtualSupplierID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901240414329_addingTransaction.resx">
+      <DependentUpon>201901240414329_addingTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901240626264_updateModelTransaction.resx">
+      <DependentUpon>201901240626264_updateModelTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Trigger\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
